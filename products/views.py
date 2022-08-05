@@ -7,7 +7,7 @@ import json
 
 def index(request):
     products = Product.objects.all()
-    return render(request, 'index.html', {
+    return render(request, 'pyshop/index.html', {
         'products': products
     })
 
