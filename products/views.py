@@ -5,17 +5,34 @@ from django.views.generic import ListView
 import json
 
 
-def index(request):
+def home(request):
     products = Product.objects.all()
-    return render(request, 'pyshop/index.html', {
+    return render(request, 'pyshop/home.html', {
         'products': products
     })
 
 
-def new(request):
-    return HttpResponse("This is the New section!")
+def cart(request):
+    return render(request, 'pyshop/cart.html')
 
 
-def json_response(request):
-    data = list(Product.objects.values())
-    return JsonResponse(data, safe=False)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def json_response(request):
+#     data = list(Product.objects.values())
+#     return JsonResponse(data, safe=False)
